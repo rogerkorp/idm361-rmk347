@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/poppins-v19-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('fonts/poppins-v19-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/poppins-v19-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/poppins-v19-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('fonts/poppins-v19-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/poppins-v19-latin-700.svg#Poppins') format('svg'); /* Legacy iOS */
+  }
+
+main{
+    max-width: 320px ;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+@keyframes day_to_night{
+    from{
+        background-color: #efd8a1;
+        color: #276468;
+    }
+    to{
+        background-color: #276468;
+        color: #efd8a1;
+    }
+}
+
+@keyframes night_to_day{
+    from{
+        background-color: #276468;
+        color: #efd8a1;
+    }
+    to{
+        background-color: #efd8a1;
+        color: #276468;
+    }
+}
+
+
+@media screen and (orientation:portrait) {
+    body{
+        animation-name: night_to_day;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }   
+
+    main{
+        margin: 25vh auto 0em
+    }
+    
+    #landscape{
+        display: none;
+    }
+
+    #portrait{
+        display: block;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    body{
+        animation-name: day_to_night;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }    
+
+    main{
+        margin: 15vh auto 0em
+    }
+
+    #landscape{
+        display: block;
+    }
+
+    #portrait{
+        display: none;
+    }
+}
