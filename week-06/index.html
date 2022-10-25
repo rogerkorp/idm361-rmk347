@@ -48,13 +48,24 @@
     </head>
     
     <body id="body">
+        <div id="landscape_warning">
+            <p id="landscape_warning_message">Please rotate your screen into the <b>portrait</b> orientation to use this app.</p>
+        </div>
         <main>
             <div id="timer_ring">
                 <div id="timer_center">
-                    <p id="countdown">00:30</p>
+                    <form id="user-input-timer">
+                        <input type="number" id="minutes" name="minutes" min="0" max="60" placeholder="00" onkeyup="if(this.value > 60) this.value = null;">
+                        <p>:</p>
+                        <input type="number" id="seconds" name="seconds" min="0" max="59" placeholder="00" onkeyup="if(this.value > 59) this.value = null;">
+                    </form>
+                    <p id="countdown"></p>
                 </div>
             </div>
             <button id="start_button" onclick="startTimer()">Start Writing</button>
+            <button id="pause_button" onclick="pauseTimer()">Pause Timer</button>
+            <button id="resume_button" onclick="resumeTimer()">Resume Timer</button>
+            <button id="reset_button" onclick="resetTimer()">Reset Timer</button>
         </main>
         <script src="scripts/js-refresh-manifest.js"></script> 
         <script src="scripts/start-timer.js"></script>
