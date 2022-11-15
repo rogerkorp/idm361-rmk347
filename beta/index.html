@@ -6,9 +6,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="Prompt Timer">
-        
         <!-- IPHONE APP ICONS -->
-
         <link rel="apple-touch-icon" href="icon/ipad/20.png">
         <link rel="apple-touch-icon" sizes="29x29" href="icon/iphone/29.png">
         <link rel="apple-touch-icon" sizes="40x40" href="icon/iphone/40.png">
@@ -46,12 +44,18 @@
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="">
     </head>
-    
     <body id="body">
+        <div id="dark-background">
+            <div id="prompt_reveal">
+                <p id="prompt_reveal_small">Your prompt is...</p>
+                <p id="prompt_reveal_large">The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </div>
         <div id="landscape_warning">
             <p id="landscape_warning_message">Please rotate your screen into the <b>portrait</b> orientation to use this app.</p>
         </div>
         <main>
+
             <div id="timer_ring">
                 <div id="timer_center">
                     <form id="user-input-timer">
@@ -63,13 +67,15 @@
                 </div>
             </div>
             <div class="button-interface">
-                <button class="button" id="start_button" onclick="startTimer()"><img src="assets/play.png"></button>
+                <button class="button" id="start_button" onclick="initiate_prompt()"><img src="assets/play.png"></button>
                 <button class="button" id="pause_button" onclick="pauseTimer()"><img src="assets/pause.png"></button>
                 <button class="button" id="resume_button" onclick="resumeTimer()"><img src="assets/play.png"></button>
                 <button class="button" id="reset_button" onclick="resetTimer()"><img src="assets/rewind.png"></button>
                 <button class="button" id="end_button" onclick="endTimer()"><img src="assets/end.png"></button>
             </div>
         </main>
+
+        
         <script src="scripts/js-refresh-manifest.js"></script> 
         <script src="scripts/start-timer.js"></script>
         <script type="text/javascript">

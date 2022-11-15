@@ -98,3 +98,7 @@ function endTimer(){
         document.getElementById('resume_button').style.display = 'none';
     }
 }
+
+function initiate_prompt(){
+    setTimeout(startTimer, 5000);
+}
