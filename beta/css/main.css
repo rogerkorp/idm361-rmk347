@@ -286,7 +286,7 @@ button img{
     width: 75%;
     margin: 1em auto 1em;
     font-weight: bold;
-    background-color: rgb(142, 221, 73);
+    background-color: var(--orange-red);
     color: rgb(66, 66, 66);
     border: none;
     transition: background-color .25s, box-shadow .25s, color .25s;
@@ -302,14 +302,14 @@ button img{
     display: none;
     width: 4em;
     height: 4em;
-    background-color: rgb(138, 193, 209);
+    background-color: var(--orange-red);
     transition: background-color .25s, filter .25s;
 
 }
 
 #pause_button:hover{
 
-    background-color: rgb(57, 106, 122);
+    background-color: rgb(149, 8, 8);
 
 }
 
@@ -317,12 +317,12 @@ button img{
     display: none;
     width: 4em;
     height: 4em;
-    background-color: rgb(142, 221, 73);
+    background-color: var(--orange-red);
     transition: background-color .25s, filter .25s;
 }
 
 #resume_button:hover{
-    background-color: rgb(55, 118, 0);
+    background-color: rgb(149, 8, 8)
 }
 
 #reset_button{
@@ -397,7 +397,7 @@ button:hover{
 }
 
 .button:hover{
-    background-color: rgb(55, 118, 0);
+    background-color: rgb(149, 8, 8);
     box-shadow: .1em .1em .1em rgba(0, 0, 0, 0.081);
     color: white;
 
@@ -425,7 +425,7 @@ button:hover{
     font-weight: bold;
 }
 
-#dark-background{
+#dark_background{
     position: absolute;
     z-index: 3;
     width: 100vw;

@@ -4,6 +4,7 @@ let endEarly = false;
 let rewind;
 
 function startTimer(){
+    document.getElementById('dark_background').style.display = 'none';
 
     let userChosenMinutes = (document.getElementById('minutes').value) * 60000;
     let userChosenSeconds = (document.getElementById('seconds').value) * 1000;
@@ -100,5 +101,6 @@ function endTimer(){
 }
 
 function initiate_prompt(){
+    document.getElementById('dark_background').style.display = 'flex';
     setTimeout(startTimer, 5000);
 }
