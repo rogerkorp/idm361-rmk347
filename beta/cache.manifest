@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 010
+# version 013
 # Include the version number so that the web app will know a new varient was created.
 # It's like updating a native app, but with javascript.
 
@@ -58,6 +58,7 @@ assets/pause.png
 assets/play.png
 assets/rewind.png
 assets/stop.png
+assets/test.png
 
 # FONTS
 

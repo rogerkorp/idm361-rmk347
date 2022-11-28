@@ -44,7 +44,7 @@
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="">
     </head>
-    <body id="body">
+    <body id="body" onload="readData();">
         <div id="dark_background" style="display: none">
             <div id="prompt_reveal">
                 <p id="prompt_reveal_small">Your prompt is...</p>
@@ -52,7 +52,10 @@
             </div>
         </div>
         <div id="landscape_warning">
-            <p id="landscape_warning_message">Please rotate your screen into the <b>portrait</b> orientation to use this app.</p>
+            <div id="landscape_warning_message">
+                <img src="assets/test.png">
+                <p>Please rotate your screen into the <b>portrait</b> orientation to use this app.</p>
+            </div>
         </div>
         <main>
 
@@ -77,7 +80,7 @@
 
         
         <script src="scripts/js-refresh-manifest.js"></script> 
-        <script src="scripts/start-timer.js"></script>
+        <script src="scripts/main.js"></script>
         <script type="text/javascript">
             var addToHomeConfig = {
                 touchIcon: false,

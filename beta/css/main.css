@@ -198,7 +198,7 @@ main{
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-left: 20%;
+    margin-left: 10%;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
@@ -234,16 +234,20 @@ button img{
 }
 
 #landscape_warning_message{
-    padding-top: 45vh;
-    font-size: 2em;
+    padding-top: 15vh;
+    font-size: .5em;
     max-width: 800px;
     margin: 0 auto 0;
 }
 
+#landscape_warning_message img{
+    width: 25%;
+}
+
 #timer_ring{
     margin-top: 2em;
-    width: 15em;
-    height: 15em;
+    width: 20em;
+    height: 20em;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -257,8 +261,8 @@ button img{
 
 #timer_center{
     background-color: rgb(245, 243, 237);
-    width: 13em;
-    height: 13em;
+    width: 16em;
+    height: 16em;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -281,8 +285,8 @@ button img{
     align-items: center;
     justify-content: center;
     margin-top: 1em;
-    padding: 1.5em;
-    border-radius: 3em;
+    padding: 2em;
+    border-radius: .5em;
     width: 75%;
     margin: 1em auto 1em;
     font-weight: bold;
@@ -301,7 +305,7 @@ button img{
 #pause_button{
     display: none;
     width: 4em;
-    height: 4em;
+    height: 6em;
     background-color: var(--orange-red);
     transition: background-color .25s, filter .25s;
 
@@ -361,17 +365,15 @@ button img{
     width: 5em;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
+    font-size: 1.1em;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 #user-input-timer input{
-    width: 1.5em;
-    height: 1.5em;
-    font-size: 2.8em;
-    margin: .1em;
+    font-size: 2em;
+    margin: .2em;
     border: 1px solid rgba(0, 0, 0, 0.115);
     border-radius: .25em;
     display: flex;

@@ -1,7 +1,37 @@
-
 let isPaused = false;
 let endEarly = false;
 let rewind;
+
+let prompts = [
+    'You are sitting at a bar talking to a giraffe. What is your conversation about?', /* By Mel Wicks from SmartBlogger */
+    'A shoe falls out of the sky. Justify why.', /* by Laura Staffaroni from Prep Scholar*/
+    '"Two weeks passed and it happened again..."', /* from The Mysteries of Harris Burdick */
+    'Write a story in second-person perspective (you/your/yourself)', /* by Laura Staffaroni from Prep Scholar*/
+    'Look around the room and write a story about the first object you notice.',
+    'You recieve a text message from an unknown number. How do you respond?',
+    'You find a secret room in your house. What do you do?',
+    'Someone puts a large black box on your doorstep. A note on the front reads "Caution: may bite."',
+    'You wake up to discover a completely different, unknown face staring back at you from the mirror.',
+    'Local gravestones start dissappearing. Why?',
+    '"...and that is why dividing by three is illegal."',
+    'Write a story where someone decides to take the long way home',
+    'Write about a time that you were lost.'
+];
+
+let mainNdx = 0;
+
+function readData() {
+  console.log("readData called");
+  // Does this browser support local storage?
+  if (typeof (Storage) !== "undefined") {
+    window.localStorage.setItem('prompts', JSON.stringify(prompts));
+  } else {
+    // Sorry! No Web Storage support..
+    alert('This browser does NOT support local storage');
+  }
+
+}
+
 
 function startTimer(){
     document.getElementById('dark_background').style.display = 'none';
@@ -59,7 +89,8 @@ function startTimer(){
                 document.getElementById('body').style.background = 'var(--orange-red)';
                 document.getElementById('pause_button').style.display = 'none';
                 document.getElementById('end_button').style.display = 'none';
-                document.getElementById('reset_button').style.display = 'block';
+                resetTimer();
+
 
             }
         };
@@ -101,6 +132,28 @@ function endTimer(){
 }
 
 function initiate_prompt(){
+
+    let unusedPrompts = window.localStorage.getItem('prompts');
+    let unusedPromptsArray = JSON.parse(unusedPrompts);
+    if (unusedPromptsArray == []){
+        window.localStorage.setItem('prompts', JSON.stringify(prompts));
+        let unusedPrompts = window.localStorage.getItem('prompts');
+        unusedPromptsArray = JSON.parse(unusedPrompts);
+    }
+    let promptListLength = unusedPromptsArray.length;
+
+    let chosenPrompt = Math.round(Math.random() * promptListLength);
+    console.log(chosenPrompt);
+    document.getElementById("prompt_reveal_large").innerHTML = unusedPromptsArray[chosenPrompt];
+
+    unusedPromptsArray.splice(chosenPrompt, 1);
+
+    
+
+
+    /* let newPromptList = prompts.splice(chosenPrompt, promptListLength - 1); */
+  
+    window.localStorage.setItem('prompts', JSON.stringify(unusedPromptsArray));
     document.getElementById('dark_background').style.display = 'flex';
     setTimeout(startTimer, 5000);
 }
