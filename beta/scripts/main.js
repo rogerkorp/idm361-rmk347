@@ -135,14 +135,14 @@ function initiate_prompt(){
 
     let unusedPrompts = window.localStorage.getItem('prompts');
     let unusedPromptsArray = JSON.parse(unusedPrompts);
-    if (unusedPromptsArray == []){
+    if (unusedPrompts == "[]"){
         window.localStorage.setItem('prompts', JSON.stringify(prompts));
         let unusedPrompts = window.localStorage.getItem('prompts');
         unusedPromptsArray = JSON.parse(unusedPrompts);
     }
     let promptListLength = unusedPromptsArray.length;
 
-    let chosenPrompt = Math.round(Math.random() * promptListLength);
+    let chosenPrompt = Math.floor(Math.random() * promptListLength);
     console.log(chosenPrompt);
     document.getElementById("prompt_reveal_large").innerHTML = unusedPromptsArray[chosenPrompt];
 
