@@ -1,5 +1,10 @@
 let isPaused = false;
 let endEarly = false;
+let pausedTime = 0;
+let resumedTime = 0;
+let reverseTime = 0;
+let totalReverseTime = 0;
+let oneHourFromNow;
 let rewind;
 
 let prompts = [
@@ -29,7 +34,6 @@ function readData() {
     // Sorry! No Web Storage support..
     alert('This browser does NOT support local storage');
   }
-  preventDefault();
 
 }
 
@@ -50,15 +54,20 @@ function startTimer(){
             }, 1);
     }; */
     
+
     let oneHourFromNow = new Date(newTime + timerAmount).getTime();
         
+
     let x = setInterval(function() {
         if(!isPaused){
 
-            let currentTime = newTime += 4.55
-            
 
-            timeDifference = oneHourFromNow - currentTime;
+            let deadline = oneHourFromNow + totalReverseTime;
+
+            console.log(totalReverseTime);
+
+            let currentTime = new Date().getTime();
+            let timeDifference = deadline - currentTime;
             let minutes = Math.floor((timeDifference % (1000 * 60 * userChosenMinutes)) / (1000 * 60));
             let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
@@ -99,14 +108,19 @@ function startTimer(){
 };
 
 function pauseTimer(){
+    pausedTime = new Date().getTime();
     isPaused = true;
     document.getElementById('pause_button').style.display = 'none';
     document.getElementById('resume_button').style.display = 'flex';
 };
+
 function resumeTimer(){
+    resumedTime = new Date().getTime();
     isPaused = false;
     document.getElementById('pause_button').style.display = 'flex';
     document.getElementById('resume_button').style.display = 'none';
+    reverseTime = resumedTime - pausedTime;
+    totalReverseTime += reverseTime;
 }
 
 function resetTimer(){
@@ -133,6 +147,11 @@ function endTimer(){
 }
 
 function initiate_prompt(){
+
+    pausedTime = 0;
+    resumedTime = 0;
+    reverseTime = 0;
+    totalReverseTime = 0;
 
     let unusedPrompts = window.localStorage.getItem('prompts');
     let unusedPromptsArray = JSON.parse(unusedPrompts);
