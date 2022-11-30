@@ -7,7 +7,12 @@ let totalReverseTime = 0;
 let oneHourFromNow;
 let rewind;
 
-let prompts = [
+
+// Total list of prompts. Goal is to have around 500-ish
+
+
+// Only store minutes entered
+let prompts = [ //DON'T WORRY ABOUT DUPLICATES 
     'You are sitting at a bar talking to a giraffe. What is your conversation about?', /* By Mel Wicks from SmartBlogger */
     'A shoe falls out of the sky. Justify why.', /* by Laura Staffaroni from Prep Scholar*/
     '"Two weeks passed and it happened again..."', /* from The Mysteries of Harris Burdick */
@@ -23,7 +28,14 @@ let prompts = [
     'Write about a time that you were lost.'
 ];
 
-let mainNdx = 0;
+// Prevents form entry on 'Enter' press, forcing the user to use the button instead.
+
+let form = document.getElementById("user-input-timer");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
+
+// Checks for local storage, and adds in 'prompts' array if it's unestablished.
 
 function readData() {
   console.log("readData called");
@@ -37,6 +49,8 @@ function readData() {
 
 }
 
+// 
+
 
 function startTimer(){
     document.getElementById('dark_background').style.display = 'none';
@@ -44,23 +58,11 @@ function startTimer(){
     let userChosenMinutes = (document.getElementById('minutes').value) * 60000;
     let timerAmount = userChosenMinutes;
     let newTime = new Date().getTime();
-    
-/*     if (isPaused){
-        let pausedTime = new Date().getTime();
-        let x = setInterval(function() {
-            let currentTime = new Date().getTime();
-            let reverseTime = currentTime - pausedTime;
-            return reverseTime;
-            }, 1);
-    }; */
-    
-
     let oneHourFromNow = new Date(newTime + timerAmount).getTime();
         
 
     let x = setInterval(function() {
         if(!isPaused){
-
 
             let deadline = oneHourFromNow + totalReverseTime;
 
@@ -71,8 +73,8 @@ function startTimer(){
             let minutes = Math.floor((timeDifference % (1000 * 60 * userChosenMinutes)) / (1000 * 60));
             let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            let formattedMinutes = minutes.toLocaleString('en-US', {minimumIntegerDigits: 3});
-            let formattedSeconds = seconds.toLocaleString('en-US', {minimumIntegerDigits: 2});
+            let formattedMinutes = minutes.toLocaleString('en-US');
+            let formattedSeconds = seconds.toLocaleString('en-US' , {minimumIntegerDigits: 2});
 
             let timeRemaining = timeDifference/timerAmount;
             let greyPercentage = timeRemaining * 360;
@@ -82,7 +84,7 @@ function startTimer(){
             document.getElementById("countdown").innerHTML = formattedMinutes + ":" + formattedSeconds;
 
             // UNCOMMENT THE ABOVE LINE TO GET THE TICKING CLOCK BACK
-            document.getElementById('timer_ring').style.background = 'conic-gradient(var(--orange-red) ' + redPercentage + 'deg, rgb(245, 243, 237) ' + redPercentage + 'deg ' + greyPercentage + 'deg)';
+            document.getElementById('timer_ring').style.background = 'conic-gradient(var(--orange-red) ' + redPercentage + 'deg, var(--white) ' + redPercentage + 'deg ' + greyPercentage + 'deg)';
             document.getElementById('user-input-timer').style.display = 'none';
             document.getElementById('start_button').style.display = 'none';
             document.getElementById('pause_button').style.display = 'flex';
@@ -92,9 +94,9 @@ function startTimer(){
             if (timeDifference < 0 || endEarly) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "00:00";
-                document.getElementById('timer_ring').style.background = 'black';
+                document.getElementById('timer_ring').style.background = 'var(--black)';
                 document.getElementById('timer_center').style.background = 'var(--orange-red)';
-                document.getElementById('countdown').style.color = 'white';
+                document.getElementById('countdown').style.color = 'var(--white)';
                 document.getElementById('body').style.background = 'var(--orange-red)';
                 document.getElementById('pause_button').style.display = 'none';
                 document.getElementById('end_button').style.display = 'none';
@@ -127,10 +129,10 @@ function resetTimer(){
     timeDifference = 0;
     endEarly = false;
     document.getElementById("countdown").style.display = "none";
-    document.getElementById('timer_ring').style.background = 'rgb(245, 243, 237)';
-    document.getElementById('timer_center').style.background = 'rgb(245, 243, 237)';
-    document.getElementById('countdown').style.color = 'black';
-    document.getElementById('body').style.background = 'rgb(245, 243, 237)';
+    document.getElementById('timer_ring').style.background = 'var(--white)';
+    document.getElementById('timer_center').style.background = 'var(--white)';
+    document.getElementById('countdown').style.color = 'var(--black)';
+    document.getElementById('body').style.background = 'var(--white)';
     document.getElementById('pause_button').style.display = 'none';
     document.getElementById('reset_button').style.display = 'none';
     document.getElementById('start_button').style.display = 'block';
@@ -177,4 +179,16 @@ function initiate_prompt(){
     window.localStorage.setItem('prompts', JSON.stringify(unusedPromptsArray));
     document.getElementById('dark_background').style.display = 'flex';
     setTimeout(startTimer, 5000);
+}
+
+function showInfo(){
+    document.getElementById('info_background').style.display = 'flex';
+    document.getElementById('info_background').style.animationFillMode = 'forwards';
+    document.getElementById('info_container').style.animationFillMode = 'forwards';
+}
+
+function hideInfo(){
+    document.getElementById('info_background').style.animationFillMode = 'reverse';
+    document.getElementById('info_container').style.animationFillMode = 'reverse';
+    document.getElementById('info_background').style.display = 'none';
 }

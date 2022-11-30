@@ -1,5 +1,8 @@
 :root{
     --orange-red: #e64820;
+    --white: rgb(245, 243, 237);
+    --black: #121212;
+    --black-grey: #12121230;
 }
 
 /* futura pt */
@@ -93,11 +96,12 @@
 
 
 body{
-    background-color: rgb(245, 243, 237);
+    background-color: var(--white);
     font-family: 'georgiaregular';
     overflow: hidden;
     display: flex;
     justify-content: center;
+    color: var(--black);
 }
 
 main{
@@ -141,7 +145,7 @@ button img{
     position: absolute;
     z-index: 9;
     height: 100%;
-    background-color:rgb(245, 243, 237);
+    background-color:var(--white);
 }
 
 #landscape_warning_message{
@@ -163,7 +167,7 @@ button img{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(251, 249, 242);
+    background-color: var(--white);
     font-feature-settings: "tnum";
     font-variant-numeric: tabular-nums;
     z-index: 1;
@@ -171,7 +175,7 @@ button img{
 }
 
 #timer_center{
-    background-color: rgb(245, 243, 237);
+    background-color: var(--white);
     width: 12em;
     height: 12em;
     border-radius: 100%;
@@ -184,10 +188,17 @@ button img{
     font-size: 1.5em;
     border: 2px solid var(--orange-red);
     font-variant-numeric: tabular-nums;
+    color: var(--black);
+}
+
+#timer_center label{
+    font-family: 'georgiabold';
+    text-transform: uppercase;
+
 }
 
 #timer_center_smaller{
-    background-color: white;
+    background-color: var(--white);
     width: 10em;
     height: 10em;
     border-radius: 100%;
@@ -218,7 +229,7 @@ button img{
 }
 
 .info_button{
-    background-color: rgb(245, 243, 237);
+    background-color: var(--white);
     padding: .75em;
     border-radius: 3em;
     width: 1em;
@@ -230,7 +241,7 @@ button img{
     font-weight: bold;
     font-size: 1.5em;
     margin-left: 75%;
-    margin-bottom: .75em;
+    margin-bottom: 1.5em;
     border: 2px solid var(--orange-red);
 }
 
@@ -284,7 +295,7 @@ button img{
 #end_button{
     display: none;
     background: var(--orange-red);
-    color: white;
+    color: var(--white);
     width: 6em;
     height: 6em;
 }
@@ -309,24 +320,25 @@ button img{
 #user-input-timer input{
     font-size: 3.5em;
     margin: .2em;
-    border: 1px solid rgba(0, 0, 0, 0.115);
+    border: 1px solid var(--black-grey);
     border-radius: .25em;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: 400;
-    background-color: rgb(245, 243, 237);
+    background-color: var(--white);
     font-family: 'futura_ptbook';
     width: 2em;
     height: 1em;
+    color: var(--black);
 }
 
 #user-input-timer input:focus {
     /* Change highlight background color to black */
     background: var(--orange-red);
     /* Change highlight text color to red */
-    color: #ffffff;
+    color: var(--white);
     border: none;
     outline: none;
   }
@@ -339,7 +351,7 @@ button:hover{
 .button:hover{
     background-color: rgb(149, 8, 8);
     box-shadow: .1em .1em .1em rgba(0, 0, 0, 0.081);
-    color: white;
+    color: var(--white);
 
 }
 
@@ -352,7 +364,7 @@ button:hover{
 }
 
 #prompt_reveal{
-    background-color: rgb(245, 243, 237);
+    background-color: var(--white);
     position: absolute;
     z-index: 5;
     padding: 1.5em;
@@ -402,21 +414,82 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--orange-red);
+    flex-direction: column;
+    background-color: #ffffff00;
+    animation-timing-function: ease-in-out;
+    animation-name: info-background-fade;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
 }
+
+#info_container{
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-name: info-reveal-rise;
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    border-radius: 1em;
+    box-shadow: 1em 0em 2em rgba(0, 0, 0, 0.116);
+    font-size: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-top: 300%;
+    max-width: 60em;
+    padding: 3em;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#info_background p{
+    margin-top: 1em;
+    font-size: 2.25em;
+    text-align: left;
+}
+
+#info_background h1{
+    font-size: 5em;
+    font-family: 'georgiabold_italic';
+    margin: 0;
+    margin-bottom: .25em;
+}
+
+#info_background button{
+    font-size: 3em;
+    background-color:var(--white);
+    color: var(--orange-red);
+    border: 2px solid var(--orange-red);
+    padding: .5em 1.5em .5em;
+    margin-top: 1em;
+    border-radius: 3em;
+    font-family: 'georgiaitalic';
+    
+}
+
+#info_build_number{
+    margin: 0;
+   font-family: 'georgiaitalic';
+   color: var(--orange-red);
+}
+
 
 #current_prompt{
     display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
     width: 90%;
-    height: 6em
+    height: 4em;
+    margin-bottom: .5em;
 
 }
 
 #current_prompt_text{
    font-size: 1.5em;
-   color: black;
+   color: var(--black);
    font-family: 'georgiaitalic';
 }
 
@@ -450,6 +523,20 @@ button:hover{
     100% { margin-top: -400%;}
 }
 
+@keyframes info-background-fade{
+    0% {background-color: #ffffff00;}
+    10% {background-color: #29212138;}
+    100% {background-color: #29212138;}
+}
+
+
+@keyframes info-reveal-rise{
+    0% { margin-top: 400%;}
+    15%{margin-top: 0%;}
+    100%{margin-top: 0%;}
+}
+
+
 
 @media screen and (orientation:portrait) {   
     
@@ -472,4 +559,26 @@ button:hover{
         display: none;
     }
 
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --orange-red: #db522f;
+        --black: rgb(245, 243, 237);
+        --white: #121212;
+        --black-grey: rgba(245, 243, 237, 0.311);
+    }
+
+    @keyframes background-fade{
+        0% {background-color: #ffffff00;}
+        10% {background-color: #0b0b0bed;}
+        90% {background-color: #0b0b0bed;}
+        100% {background-color: #ffffff00;}
+    }
+
+    .paper-texture{
+        background-image: url(../assets/black-paper.jpg);
+        mix-blend-mode: screen;
+        opacity: .5;
+    }
 }
