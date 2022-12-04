@@ -159,35 +159,38 @@ function endTimer(){
 
 function initiate_prompt(){
 
-    pausedTime = 0;
-    resumedTime = 0;
-    reverseTime = 0;
-    totalReverseTime = 0;
+    let validation = document.getElementById('minutes').value;
+    console.log(validation);
 
-    let unusedPrompts = window.localStorage.getItem('prompts');
-    let unusedPromptsArray = JSON.parse(unusedPrompts);
-    if (unusedPrompts == "[]"){
-        window.localStorage.setItem('prompts', JSON.stringify(prompts));
+        pausedTime = 0;
+        resumedTime = 0;
+        reverseTime = 0;
+        totalReverseTime = 0;
+
         let unusedPrompts = window.localStorage.getItem('prompts');
-        unusedPromptsArray = JSON.parse(unusedPrompts);
-    }
-    let promptListLength = unusedPromptsArray.length;
+        let unusedPromptsArray = JSON.parse(unusedPrompts);
+        if (unusedPrompts == "[]"){
+            window.localStorage.setItem('prompts', JSON.stringify(prompts));
+            let unusedPrompts = window.localStorage.getItem('prompts');
+            unusedPromptsArray = JSON.parse(unusedPrompts);
+        }
+        let promptListLength = unusedPromptsArray.length;
 
-    let chosenPrompt = Math.floor(Math.random() * promptListLength);
-    console.log(chosenPrompt);
-    document.getElementById("prompt_reveal_large").innerHTML = unusedPromptsArray[chosenPrompt];
-    document.getElementById("current_prompt_text").innerHTML = unusedPromptsArray[chosenPrompt];
+        let chosenPrompt = Math.floor(Math.random() * promptListLength);
+        console.log(chosenPrompt);
+        document.getElementById("prompt_reveal_large").innerHTML = unusedPromptsArray[chosenPrompt];
+        document.getElementById("current_prompt_text").innerHTML = unusedPromptsArray[chosenPrompt];
 
-    unusedPromptsArray.splice(chosenPrompt, 1);
+        unusedPromptsArray.splice(chosenPrompt, 1);
 
+        
+
+
+        /* let newPromptList = prompts.splice(chosenPrompt, promptListLength - 1); */
     
-
-
-    /* let newPromptList = prompts.splice(chosenPrompt, promptListLength - 1); */
-  
-    window.localStorage.setItem('prompts', JSON.stringify(unusedPromptsArray));
-    document.getElementById('dark_background').style.display = 'flex';
-    setTimeout(startTimer, 5000);
+        window.localStorage.setItem('prompts', JSON.stringify(unusedPromptsArray));
+        document.getElementById('dark_background').style.display = 'flex';
+        setTimeout(startTimer, 5000);
 }
 
 function showInfo(){

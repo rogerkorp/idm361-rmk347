@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 020
+# version 021
 # Include the version number so that the web app will know a new varient was created.
 # It's like updating a native app, but with javascript.
 
@@ -12,12 +12,6 @@ CACHE:
 css/main.css
 css/normalize.css
 css/css-add2home.css
-
-# FONTS
-
-fonts/poppins-v19-latin-700.ttf
-fonts/poppins-v19-latin-700.woff
-fonts/poppins-v19-latin-700.woff2
 
 # ICONS
 
@@ -49,18 +43,23 @@ icon/ipad/167.png
 
 scripts/js-add2home.js
 scripts/js-refresh-manifest.js
-scripts/start-timer.js
+scripts/main.js
 
 # ASSETS
 
+assets/black-paper.jpg
+assets/dark-rotate.gif
 assets/end.png
+assets/Group 2.png
+assets/light-rotate.gif
 assets/pause.png
 assets/play.png
 assets/rewind.png
 assets/stop.png
-assets/test.png
 assets/test-paper.jpg
 assets/test-paper.png
+assets/test.png
+
 
 # FONTS
 
