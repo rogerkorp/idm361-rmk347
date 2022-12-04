@@ -67,9 +67,14 @@
         </div>
         <div id="landscape_warning">
             <div id="landscape_warning_message">
-                <img src="assets/test.png">
-                <p>Please rotate your screen into the <b>portrait</b> orientation to use this app.</p>
+                <picture>
+                    <source srcset="assets/dark-rotate.gif" media="(prefers-color-scheme: dark)">
+                    <img src="assets/light-rotate.gif" alt="Light Mode Image">
+                 </picture>
+                <p class="landscape_warning_bold">Please rotate your device</p>
+                <p class="landscape_warning_light">This app only supports portrait mode</p>
             </div>
+            <div class="paper-texture"></div>
         </div>
         <main>
             <button class="info_button" onclick="showInfo()">i</button>

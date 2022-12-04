@@ -166,17 +166,32 @@ button img{
     z-index: 9;
     height: 100%;
     background-color:var(--white);
+    font-family: 'georgiaitalic';
+
 }
 
 #landscape_warning_message{
-    padding-top: 15vh;
+    padding-top: 14vh;
     font-size: .5em;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto 0;
 }
 
 #landscape_warning_message img{
     width: 25%;
+    margin-bottom: 2em;
+}
+
+.landscape_warning_bold{
+    font-family: 'georgiabold_italic';
+    font-size: 4em;
+}
+
+.landscape_warning_light{
+    font-family: 'georgiaitalic';
+    margin-top: .8em;
+    font-size: 2.5em;
+    color: var(--orange-red);
 }
 
 #timer_ring{
@@ -212,8 +227,8 @@ button img{
 }
 
 #timer_center label{
-    font-family: 'Renogare';
-    text-transform: uppercase;
+    font-family: 'georgiaitalic';
+    color: var(--orange-red);
 
 }
 
@@ -464,6 +479,15 @@ button:hover{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+#info_container h1{
+    font-weight: normal;
+}
+
+#info_container b{
+    font-weight: normal;
+    font-family: 'georgiabold';
 }
 
 #info_background p{
