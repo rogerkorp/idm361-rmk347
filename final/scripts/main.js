@@ -192,3 +192,5 @@ function hideInfo(){
     document.getElementById('info_container').style.animationFillMode = 'reverse';
     document.getElementById('info_background').style.display = 'none';
 }
+
+

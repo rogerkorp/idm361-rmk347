@@ -94,6 +94,19 @@
 }
 
 
+@font-face {
+    font-family: 'Renogare';
+    src: url('../fonts/Renogare-Regular.woff2') format('woff2'),
+        url('../fonts/Renogare-Regular.woff') format('woff'),
+        url('../fonts/Renogare-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html{
+    background-color: var(--white);
+}
 
 body{
     background-color: var(--white);
@@ -102,6 +115,13 @@ body{
     display: flex;
     justify-content: center;
     color: var(--black);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 main{
@@ -192,7 +212,7 @@ button img{
 }
 
 #timer_center label{
-    font-family: 'georgiabold';
+    font-family: 'Renogare';
     text-transform: uppercase;
 
 }
@@ -229,7 +249,7 @@ button img{
 }
 
 .info_button{
-    background-color: var(--white);
+    background-color: var(--orange-red);
     padding: .75em;
     border-radius: 3em;
     width: 1em;
@@ -237,11 +257,13 @@ button img{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--orange-red);
+    color: var(--white);
     font-weight: bold;
     font-size: 1.5em;
-    margin-left: 75%;
-    margin-bottom: 1.5em;
+    margin-right: 75%;
+    position: absolute;
+    bottom: -1.5em;
+    right: 1.5em;
     border: 2px solid var(--orange-red);
 }
 
@@ -274,17 +296,17 @@ button img{
 }
 
 #resume_button:hover{
-    background-color: rgb(149, 8, 8)
+    background-color: var(--orange-red)
 }
 
 #reset_button{
     display: none;
-    background-color: rgb(149, 8, 8);
+    background-color: var(--orange-red);
     color: var(--orange-red);
 }
 
 #reset_button:hover{
-    background-color: rgb(70, 0, 0)
+    background-color: var(--orange-red);
 }
 
 #reset_button img{
@@ -305,7 +327,7 @@ button img{
 }
 
 #end_button:hover{
-    background-color: rgb(149, 8, 8)
+    background-color: var(--orange-red)
 }
 
 #user-input-timer{
@@ -349,7 +371,7 @@ button:hover{
 }
 
 .button:hover{
-    background-color: rgb(149, 8, 8);
+    background-color: var(--orange-red);
     box-shadow: .1em .1em .1em rgba(0, 0, 0, 0.081);
     color: var(--white);
 
@@ -459,8 +481,8 @@ button:hover{
 
 #info_background button{
     font-size: 3em;
-    background-color:var(--white);
-    color: var(--orange-red);
+    background-color:var(--orange-red);
+    color: var(--white);
     border: 2px solid var(--orange-red);
     padding: .5em 1.5em .5em;
     margin-top: 1em;
@@ -586,5 +608,22 @@ button:hover{
         background-image: url(../assets/black-paper.jpg);
         mix-blend-mode: screen;
         opacity: .5;
+    }
+
+    #user-input-timer input{
+        color: var(--black);
+    }
+
+    #user-input-timer input:focus {
+        color: var(--black);
+    }
+
+    .info_button{
+        color: var(--black);
+    }
+
+    #info_background button{
+        color: var(--black);
+        
     }
 }
