@@ -7,6 +7,7 @@ let totalReverseTime = 0;
 let oneHourFromNow;
 let rewind;
 let lastTimeSet = '';
+let validation;
 
 
 // Total list of prompts. Goal is to have around 500-ish
@@ -32,7 +33,9 @@ let prompts = [ //DON'T WORRY ABOUT DUPLICATES
 // Prevents form entry on 'Enter' press, forcing the user to use the button instead.
 
 let form = document.getElementById("user-input-timer");
-function handleForm(event) { event.preventDefault(); } 
+function handleForm(event) { 
+    event.preventDefault(); 
+} 
 form.addEventListener('submit', handleForm);
 
 
@@ -64,7 +67,7 @@ function startTimer(){
 
     window.localStorage.setItem('lastTimeSet',document.getElementById('minutes').value);
 
-    let userChosenMinutes = (document.getElementById('minutes').value) * 60000;
+    let userChosenMinutes = validation * 60000;
     let timerAmount = userChosenMinutes;
     let newTime = new Date().getTime();
     let oneHourFromNow = new Date(newTime + timerAmount).getTime();
@@ -158,9 +161,11 @@ function endTimer(){
 }
 
 function initiate_prompt(){
-
-    let validation = document.getElementById('minutes').value;
-    console.log(validation);
+    document.getElementById('user-input-timer').style.display = 'none';
+    document.getElementById('minutes').blur();
+    validation = document.getElementById('minutes').value;
+    document.getElementById("countdown").innerHTML = validation + ":00";
+    document.getElementById("countdown").style.display = 'block';
 
         pausedTime = 0;
         resumedTime = 0;
