@@ -6,6 +6,7 @@ let reverseTime = 0;
 let totalReverseTime = 0;
 let oneHourFromNow;
 let rewind;
+let lastTimeSet = '';
 
 
 // Total list of prompts. Goal is to have around 500-ish
@@ -39,6 +40,7 @@ form.addEventListener('submit', handleForm);
 
 function readData() {
   console.log("readData called");
+
   // Does this browser support local storage?
   if (typeof (Storage) !== "undefined") {
     window.localStorage.setItem('prompts', JSON.stringify(prompts));
@@ -46,6 +48,11 @@ function readData() {
     // Sorry! No Web Storage support..
     alert('This browser does NOT support local storage');
   }
+  
+ let lastTimeSet = window.localStorage.getItem('lastTimeSet');
+
+ document.getElementById("minutes").value = lastTimeSet;
+
 
 }
 
@@ -54,6 +61,8 @@ function readData() {
 
 function startTimer(){
     document.getElementById('dark_background').style.display = 'none';
+
+    window.localStorage.setItem('lastTimeSet',document.getElementById('minutes').value);
 
     let userChosenMinutes = (document.getElementById('minutes').value) * 60000;
     let timerAmount = userChosenMinutes;
