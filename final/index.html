@@ -2,7 +2,7 @@
 <html manifest="cache.manifest" lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no viewport-fit=cover">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="Prompt Timer">
@@ -44,24 +44,26 @@
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="assets/favicon.svg">
     </head>
-    <body id="body" onload="readData(), showInfo();">
+    <body id="body" onload="readData()">
         <div id="dark_background" style="display: none">
             <div id="prompt_reveal">
-                <div id="prompt_reveal_inner_border">
-                    <p id="prompt_reveal_small">Your prompt is...</p>
-                    <p id="prompt_reveal_large">The quick brown fox jumps over the lazy dog.</p>
+                        <p id="prompt_reveal_small">Your prompt is...</p>
+                        <div class="prompt_border"></div>
+                        <p id="prompt_reveal_large">The quick brown fox jumps over the lazy dog.</p>
+                        <div class="prompt_border"></div>
+                        <p id="prompt_author">– Placeholder</p>
                 </div>
             </div>
         </div>
-        <div id="info_background" style="display: none">
-            <div id="info_container">
+        <div id="info_background" style="display: none" class="">
+            
+            <div id="info_container" class="">
                 <h1>Prompt Timer</h1>
-                <p id="info_build_number">Beta 12.04 (Build 21)</p>
-                <p>Prompt Timer is an application designed to challenge your creative writing skills. </p>
-                <p>Using a randomized prompt, your goal is to write as much as you can within the amount of time you allotted yourself</p>
-                <p>Enter in the desired exercise length using the <b>minutes box</b>, and then press the <b>play button</b> to begin the challenge.</p>
-                <p>Once it begins, you will be given a <b>random writing prompt</b> that you will use as the basis for your story.</p>
-                <p>You can use the <b>pause button</b> to momentarily <b>stop the challenge</b>, or, alterantively, you can use the <b>cross button</b> to <b>end the challenge</b></p>
+                <p id="info_build_number">Version 1.0 (Build 26)</p>
+                <div class="prompt_border"></div>
+                <p>Prompt Timer is an application designed to challenge your creative writing skills. Using a randomized prompt, your goal is to write as much as you can within the amount of time you allotted yourself</p>
+                <p><b>Enter in the desired exercise length</b> using the <b>minutes input</b>, and then tap the <b>play button</b> to <b>begin your challenge.</b>When it begins, will be given a randomized writing prompt followed by the beginning of the countdown. The challenge will end when the clock reaches zero.</p>
+                <p>During the challenge you may use the <b>pause button</b> to <b>temporarily stop the challenge</b> or the <b>cross button</b> to <b>end the challenge early.</b></p>
                 <button onclick="hideInfo()">Close</button>
             </div>
         </div>
@@ -79,7 +81,7 @@
         <main>
             <button class="info_button" onclick="showInfo()">i</button>
             <div id="current_prompt">
-                <p id="current_prompt_text">Set the timer and press play to begin your writing challenge.</p>
+                <p id="current_prompt_text" class="">Set the timer and press play to begin your writing challenge.</p>
             </div>
 
             <div id="timer_ring">
@@ -95,7 +97,6 @@
                 <button type="submit" form="user-input-timer" class="button" id="start_button"><img src="assets/play.png"></button>
                 <button class="button" id="pause_button" onclick="pauseTimer();"><img src="assets/pause.png"></button>
                 <button class="button" id="resume_button" onclick="resumeTimer();"><img src="assets/play.png"></button>
-                <button class="button" id="reset_button" onclick="resetTimer();"><img src="assets/rewind.png"></button>
                 <button class="button" id="end_button" onclick="endTimer();"><img src="assets/end.png"></button>
             </div>
         </main>

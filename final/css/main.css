@@ -1,36 +1,21 @@
+
+/* Prompt Timer Stylesheet*/
+
+
+/* ------- CUSTOM PROPERTIES ------- */
+
 :root{
-    --orange-red: #e64820;
-    --white: rgb(245, 243, 237);
-    --black: #121212;
-    --black-grey: #12121230;
+    --orange-red: #e64820; /* Accent Color */
+    --white: rgb(245, 243, 237); /* Background Color */
+    --black: #121212; /* Text Color */
+    --black-grey: #12121230; /* Off-Shade Used for Inputs  */
 }
 
-/* futura pt */
 
 
+/* ------- FONTS ------- */
 
-@font-face {
-    font-family: 'futura_ptbook';
-    src: url('../fonts/futuraptbook-webfont.woff2') format('woff2'),
-         url('../fonts/futuraptbook-webfont.woff') format('woff'),
-         url('../fonts/futuraptbook-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/* century gothic */
-
-@font-face {
-    font-family: 'century_gothicbold';
-    src: url('../fonts/gothicb-webfont.woff2') format('woff2'),
-         url('../fonts/gothicb-webfont.woff') format('woff'),
-         url('../fonts/gothicb-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
+/* --- Century Gothic --- */
 
 @font-face {
     font-family: 'century_gothicregular';
@@ -42,8 +27,42 @@
 
 }
 
-/* georgia */
+/* --- Georgia --- */
 
+/* Georgia Regular */
+@font-face {
+    font-family: 'georgiaregular';
+    src: url('../fonts/georgia-webfont.woff2') format('woff2'),
+         url('../fonts/georgia-webfont.woff') format('woff'),
+         url('../fonts/georgia-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Georgia Italic */
+@font-face {
+    font-family: 'georgiaitalic';
+    src: url('../fonts/georgia_italic-webfont.woff2') format('woff2'),
+         url('../fonts/georgia_italic-webfont.woff') format('woff'),
+         url('../fonts/georgia_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Georgia Bold */
+@font-face {
+    font-family: 'georgiabold';
+    src: url('../fonts/georgia_bold-webfont.woff2') format('woff2'),
+         url('../fonts/georgia_bold-webfont.woff') format('woff'),
+         url('../fonts/georgia_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Georgia Bold Italic */ 
 @font-face {
     font-family: 'georgiabold_italic';
     src: url('../fonts/georgia_bold_italic-webfont.woff2') format('woff2'),
@@ -56,92 +75,55 @@
 
 
 
+/* ------- ELEMENT SELECTORS ------- */
 
-@font-face {
-    font-family: 'georgiabold';
-    src: url('../fonts/georgia_bold-webfont.woff2') format('woff2'),
-         url('../fonts/georgia_bold-webfont.woff') format('woff'),
-         url('../fonts/georgia_bold-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'georgiaitalic';
-    src: url('../fonts/georgia_italic-webfont.woff2') format('woff2'),
-         url('../fonts/georgia_italic-webfont.woff') format('woff'),
-         url('../fonts/georgia_italic-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
+body{
+    background-color: var(--white);
+    bottom: 0;
+    color: var(--black);
+    display: flex;
     font-family: 'georgiaregular';
-    src: url('../fonts/georgia-webfont.woff2') format('woff2'),
-         url('../fonts/georgia-webfont.woff') format('woff'),
-         url('../fonts/georgia-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
 }
 
 
-@font-face {
-    font-family: 'Renogare';
-    src: url('../fonts/Renogare-Regular.woff2') format('woff2'),
-        url('../fonts/Renogare-Regular.woff') format('woff'),
-        url('../fonts/Renogare-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+button:hover{
+    cursor: pointer;
+}
+
+button img{
+    max-width: 1.5em;
 }
 
 html{
     background-color: var(--white);
 }
 
-body{
-    background-color: var(--white);
-    font-family: 'georgiaregular';
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    color: var(--black);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+img{
+    max-width: 100%;
 }
 
 main{
-    max-width: 650px;
-    font-weight: 400;
-    font-family: 'georgiaitalic';
-    font-size: 4vw;
+    -ms-transform: translateY(-50%);
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-family: 'georgiaitalic';
+    font-size: 4vw;
+    font-weight: 400;
     justify-content: center;
     margin: 0;
+    max-width: 650px;
     position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
+    top: 47%;
     transform: translateY(-50%);
-}
-
-img{
-    max-width: 100%;
 }
 
 p{
@@ -151,503 +133,529 @@ p{
     text-align: center;
 }
 
-button img{
-    max-width: 1.5em;
-    filter: invert(100%);
-}
 
-#landscape_warning{
-    display: flex;
-    width: 100%;
+
+/* ------- CLASS SELECTORS ------- */
+
+.button{ /* The play/pause/stop buttons */
     align-items: center;
+    background-color: var(--orange-red);
+    border-radius: 3em;
+    border: none;
+    color: rgb(66, 66, 66);
+    display: flex;
+    font-family: 'georgia';
+    font-weight: bold;
     justify-content: center;
-    text-align: center;
+    margin: 1em 2em 1em;
+    padding: 2em;
+    transition: background-color .25s, box-shadow .25s, color .25s;
+    width: 100%;
+}
+
+.button-interface{ /* The div containing all of the play/pause/stop buttons */
+    display: flex;
+    height: 120px;
+    margin-top: 1em;
+}
+
+.current_prompt_reveal{ /* Animation class for revealing the selected prompt */
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+    animation-name: slow-reveal;
+    opacity: 1;
+}
+
+.current_prompt_hide{ /* Animation class for hiding the selected prompt */
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-name: slow-hide;
+    opacity: 0;
+}
+
+.info_button{  /* The round "i" button in the bottom left corner */
+    align-items: center;
+    background-color: var(--orange-red);
+    border-radius: 3em;
+    border: 2px solid var(--orange-red);
+    bottom: -1.5em;
+    color: var(--white);
+    display: flex;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 1em;
+    justify-content: center;
+    margin-right: 75%;
+    padding: .75em;
     position: absolute;
-    z-index: 9;
-    height: 100%;
-    background-color:var(--white);
-    font-family: 'georgiaitalic';
-
+    right: 1.5em;
+    width: 1em;
 }
 
-#landscape_warning_message{
-    padding-top: 14vh;
-    font-size: .5em;
-    max-width: 600px;
-    margin: 0 auto 0;
+.info_close{ /* Animation class for fading out the dark background behind the div containining the app information */
+    animation-timing-function: ease-in-out;
+    animation-name: info-background-fade-out;
+    animation-fill-mode: reverse;
+    animation-duration: 1.25s;
 }
 
-#landscape_warning_message img{
-    width: 25%;
-    margin-bottom: 2em;
+.info_container_close{ /* Animation class for falling out the div containining the app information */
+    animation-duration: 1.25s;
+    animation-fill-mode: reverse;
+    animation-name: info-reveal-fall;
+    animation-timing-function: ease-in-out;
 }
 
-.landscape_warning_bold{
+.info_container_open{  /* Animation class for rising up the div containining the app information */
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+    animation-name: info-reveal-rise;
+    animation-timing-function: ease-in-out;
+}
+
+.info_open{ /* Animation class for fading in the dark background behind the div containining the app information */
+    animation-timing-function: ease-in-out;
+    animation-name: info-background-fade;
+    animation-fill-mode: forwards;
+    animation-duration: .8s;
+}
+
+.landscape_warning_bold{ /* The large text on the landscape warning page */
     font-family: 'georgiabold_italic';
     font-size: 4em;
 }
 
-.landscape_warning_light{
+.landscape_warning_light{ /* The small text on the landscape warning page*/
+    color: var(--orange-red);
     font-family: 'georgiaitalic';
-    margin-top: .8em;
     font-size: 2.5em;
-    color: var(--orange-red);
+    margin-top: .8em;
 }
 
-#timer_ring{
-    margin-top: 2em;
-    width: 20em;
-    height: 20em;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--white);
-    font-feature-settings: "tnum";
-    font-variant-numeric: tabular-nums;
-    z-index: 1;
-    border: 2px solid var(--orange-red);
-}
-
-#timer_center{
-    background-color: var(--white);
-    width: 12em;
-    height: 12em;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-variant-numeric: tabular-nums;
-    z-index: 1;
-    font-family: 'century_gothicregular';
-    font-size: 1.5em;
-    border: 2px solid var(--orange-red);
-    font-variant-numeric: tabular-nums;
-    color: var(--black);
-}
-
-#timer_center label{
-    font-family: 'georgiaitalic';
-    color: var(--orange-red);
-
-}
-
-#timer_center_smaller{
-    background-color: var(--white);
-    width: 10em;
-    height: 10em;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button{
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
-    padding: 2em;
-    border-radius: 3em;
-    width: 100%;
-    margin: 1em 2em 1em;
-    font-weight: bold;
-    background-color: var(--orange-red);
-    color: rgb(66, 66, 66);
-    border: none;
-    transition: background-color .25s, box-shadow .25s, color .25s;
-    font-family: 'Poppins';
-}
-
-.button-interface{
-    display: flex;
-    margin-top: 1.5em;
-}
-
-.info_button{
-    background-color: var(--orange-red);
-    padding: .75em;
-    border-radius: 3em;
-    width: 1em;
-    height: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-right: 75%;
+.paper-texture{  /* Overlays a paper texture across all of the elements on the screen */
+    background-image: url(../assets/test-paper.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
     position: absolute;
-    bottom: -1.5em;
-    right: 1.5em;
-    border: 2px solid var(--orange-red);
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
 }
 
-#start_button{
-    width: 12em;
+.prompt_border{ /* The long orange lines that divide content on the prompt reveal and info screens  */
+    background-color: var(--orange-red);
+    height: 2px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 80vw;
 }
 
-#pause_button{
-    display: none;
-    width: 6em;
+
+
+
+/* ------- ID SELECTORS ------- */
+
+#current_prompt{ /* Div that contains the small text that sits above the timer ring */
+    align-items: center;
+    display: flex;
     height: 6em;
-    background-color: var(--orange-red);
-    transition: background-color .25s, filter .25s;
-
+    justify-content: center;
+    text-align: center;
+    width: 90%;
 }
 
-#pause_button:hover{
-
-    background-color: rgb(149, 8, 8);
-
+#current_prompt_text{ /* The small text above the timer ring that reads the current prompt */
+   color: var(--black);
+   font-family: 'georgiaitalic';
+   font-size: 1.5em;
 }
 
-
-#resume_button{
-    display: none;
-    width: 6em;
-    height: 6em;
-    background-color: var(--orange-red);
-    transition: background-color .25s, filter .25s;
+#dark_background{ /* The div containing the prompt pop-up. Darkens the screen when active.*/
+    align-items: center;
+    animation-duration: 5s;
+    animation-name: background-fade;
+    animation-timing-function: ease-in-out;
+    background-color: #ffffff00;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
 }
 
-#resume_button:hover{
-    background-color: var(--orange-red)
-}
-
-#reset_button{
-    display: none;
-    background-color: var(--orange-red);
-    color: var(--orange-red);
-}
-
-#reset_button:hover{
-    background-color: var(--orange-red);
-}
-
-#reset_button img{
-        max-width: 2.5em;
-
-}
-
-#end_button{
-    display: none;
+#end_button{ /* The cross button on the button interface */
     background: var(--orange-red);
     color: var(--white);
-    width: 6em;
+    display: none;
     height: 6em;
+    width: 6em;
 }
 
 #end_button img{
-    filter: invert(100)
+    max-width: 1.75em;
 }
 
 #end_button:hover{
     background-color: var(--orange-red)
 }
 
-#user-input-timer{
-    display: flex;
+#info_background{ /* The div containing the information div on the "i" button pop-up*/
     align-items: center;
-    justify-content: center;
+    background-color: #ffffff00;
+    display: flex;
     flex-direction: column;
-    font-size: .9em;
-    text-align: center;
-}
-
-#user-input-timer input{
-    font-size: 3.5em;
-    margin: .2em;
-    border: 1px solid var(--black-grey);
-    border-radius: .25em;
-    display: flex;
-    align-items: center;
+    height: 100vh;
     justify-content: center;
-    text-align: center;
-    font-weight: 400;
-    background-color: var(--white);
-    font-family: 'futura_ptbook';
-    width: 2em;
-    height: 1em;
-    color: var(--black);
+    position: absolute;
+    width: 100vw;
+    z-index: 3;
 }
 
-#user-input-timer input:focus {
-    /* Change highlight background color to black */
-    background: var(--orange-red);
-    /* Change highlight text color to red */
-    color: var(--white);
-    border: none;
-    outline: none;
-  }
-  
-
-button:hover{
-    cursor: pointer;
-}
-
-.button:hover{
-    background-color: var(--orange-red);
-    box-shadow: .1em .1em .1em rgba(0, 0, 0, 0.081);
-    color: var(--white);
-
-}
-
-#prompt_reveal_inner_border{
+#info_background button{
+    background-color:var(--orange-red);
+    border-radius: 3em;
     border: 2px solid var(--orange-red);
-    margin: 0;
-    padding: 12em 3em 12em;
-    border-radius: .5em;
-
+    color: var(--white);
+    font-family: 'georgiaitalic';
+    font-size: 3em;
+    margin-top: 1em;
+    padding: .5em 1.5em .5em;
+    
 }
 
-#prompt_reveal{
-    background-color: var(--white);
-    position: absolute;
-    z-index: 5;
-    padding: 1.5em;
-    font-size: .5em;
-    max-width: 60em;
-    border-radius: 1em;
-    box-shadow: 1em 0em 2em rgba(0, 0, 0, 0.116);
-    margin-top: 300%;
-    animation-name: prompt-reveal-rise;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    margin-left: .5em;
-    margin-right: .5em;
-}
-
-#prompt_reveal_small{
-    font-size: 2.5em;
-    font-style: italic;
-    margin-bottom: 1em;
-    color: var(--orange-red)
-}
-
-#prompt_reveal_large{
-    font-size: 3.75em;
+#info_background h1{
     font-family: 'georgiabold_italic';
+    font-size: 5em;
+    margin: 0;
 }
 
-#dark_background{
-    position: absolute;
-    z-index: 3;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+#info_background p{
+    font-size: 2.25em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    text-align: left;
+}
+
+#info_build_number{ /* Just the text that says what version number it is. */
+    color: var(--orange-red);
+    font-family: 'georgiaitalic';
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+#info_container{ /* The information div pop-up */
     align-items: center;
-    justify-content: center;
-    background-color: #ffffff00;
-    animation-timing-function: ease-in-out;
-    animation-name: background-fade;
-    animation-duration: 5s;
-}
-
-#info_background{
-    position: absolute;
-    z-index: 3;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #ffffff00;
-    animation-timing-function: ease-in-out;
-    animation-name: info-background-fade;
-    animation-fill-mode: forwards;
-    animation-duration: 5s;
-}
-
-#info_container{
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    animation-name: info-reveal-rise;
-    animation-timing-function: ease-in-out;
     background-color: var(--white);
-    border-radius: 1em;
     box-shadow: 1em 0em 2em rgba(0, 0, 0, 0.116);
-    font-size: .5em;
-    margin-left: .5em;
-    margin-right: .5em;
-    margin-top: 300%;
-    max-width: 60em;
-    padding: 3em;
-    position: absolute;
-    z-index: 5;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    font-size: .5em;
+    height: 120vh;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    z-index: 5;
+}
+
+#info_container b{
+    font-family: 'georgiabold';
+    font-weight: normal;
 }
 
 #info_container h1{
     font-weight: normal;
 }
 
-#info_container b{
-    font-weight: normal;
-    font-family: 'georgiabold';
-}
-
-#info_background p{
-    margin-top: 1em;
-    font-size: 2.25em;
-    text-align: left;
-}
-
-#info_background h1{
-    font-size: 5em;
-    font-family: 'georgiabold_italic';
-    margin: 0;
-    margin-bottom: .25em;
-}
-
-#info_background button{
-    font-size: 3em;
-    background-color:var(--orange-red);
-    color: var(--white);
-    border: 2px solid var(--orange-red);
-    padding: .5em 1.5em .5em;
-    margin-top: 1em;
-    border-radius: 3em;
-    font-family: 'georgiaitalic';
-    
-}
-
-#info_build_number{
-    margin: 0;
-   font-family: 'georgiaitalic';
-   color: var(--orange-red);
-}
-
-
-#current_prompt{
-    display: flex;
+#landscape_warning{ /* The message that appears when you tilt your phone into landscape */
     align-items: center;
+    background-color:var(--white);
+    display: flex;
+    font-family: 'georgiaitalic';
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+}
+
+#landscape_warning_message{
+    font-size: .5em;
+    margin: 0 auto 0;
+    max-width: 600px;
+    padding-top: 18vh;
+}
+
+#landscape_warning_message img{
+    margin-bottom: 2em;
+    width: 25%;
+}
+
+#pause_button{ /* The pause button on the interface */
+    background-color: var(--orange-red);
+    display: none;
+    height: 6em;
+    transition: background-color .25s, filter .25s;
+    width: 6em;
+}
+
+#prompt_author{ /* The text below the prompt reveal that gives credit to the original writer of the prompt */
+    font-size: 2.5em;
+    font-family: 'georgiaitalic';
+    color: var(--black);
+    margin-top: .8em;
+}
+
+#prompt_reveal{ /* The div containing the prompt information */
+    align-items: center;
+    animation-duration: 5s;
+    animation-name: prompt-reveal-rise;
+    animation-timing-function: ease-in-out;
+    background-color: var(--white);
+    box-shadow: 1em 0em 2em rgba(0, 0, 0, 0.116);
+    display: flex;
+    flex-direction: column;
+    font-size: .5em;
+    height: 110vh;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    z-index: 5;
+}
+
+#prompt_reveal_large{ /* The large text that says what the prompt is */
+    font-size: 3.75em;
+    font-family: 'georgiabold_italic';
+    margin: .8em;
+}
+
+#prompt_reveal_small{ /* The small red "Your prompt is..." text */
+    font-size: 2.5em;
+    font-style: italic;
+    margin-bottom: .8em;
+    color: var(--orange-red)
+}
+
+#resume_button{ /* The resume button that activates after pausing */
+    background-color: var(--orange-red);
+    display: none;
+    height: 6em;
+    transition: background-color .25s, filter .25s;
+    width: 6em;
+}
+
+#resume_button:hover{
+    background-color: var(--orange-red)
+}
+
+#start_button{ /* The large button that begins the challenge on the main screen */
+    height: 6em;
+    width: 12em;
+}
+
+#timer_center{ /* The area inside timer ring */
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 100%;
+    border: 2px solid var(--orange-red);
+    color: var(--black);
+    display: flex;
+    font-family: 'century_gothicregular';
+    font-size: 1.5em;
+    font-variant-numeric: tabular-nums;
+    font-variant-numeric: tabular-nums;
+    height: 12em;
+    justify-content: center;
+    width: 12em;
+    z-index: 1;
+}
+
+#timer_center label{
+    color: var(--orange-red);
+    font-family: 'georgiaitalic';
+
+}
+
+#timer_ring{ /* The timer ring */
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 100%;
+    border: 2px solid var(--orange-red);
+    display: flex;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    height: 20em;
+    justify-content: center;
+    margin-top: 2em;
+    width: 20em;
+    z-index: 1;
+}
+
+#user-input-timer{ /* The "minutes" input box */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: .9em;
     justify-content: center;
     text-align: center;
-    width: 90%;
-    height: 4em;
-    margin-bottom: .5em;
-
 }
 
-#current_prompt_text{
-   font-size: 1.5em;
-   color: var(--black);
-   font-family: 'georgiaitalic';
+#user-input-timer input{
+    align-items: center;
+    background-color: var(--white);
+    border-radius: .25em;
+    border: 1px solid var(--black-grey);
+    color: var(--black);
+    display: flex;
+    font-family: 'century_gothicregular';
+    font-size: 3.5em;
+    font-weight: 400;
+    height: 1em;
+    justify-content: center;
+    margin: .2em;
+    text-align: center;
+    width: 2em;
 }
 
-.paper-texture{
-    background-image: url(../assets/test-paper.jpg);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-repeat: repeat;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    background-size: cover;
+#user-input-timer input:focus {
+    background: var(--orange-red);
+    border: none;
+    color: var(--white);
+    outline: none;
 }
+ 
 
-@keyframes background-fade{
+
+/* ------- ANIMATION KEYFRAMES ------- */  
+
+@keyframes background-fade{ /* #dark_background */
     0% {background-color: #ffffff00;}
     10% {background-color: #29212138;}
     90% {background-color: #29212138;}
     100% {background-color: #ffffff00;}
 }
 
-@keyframes prompt-reveal-rise{
-    0% { margin-top: 300%;}
-    15%{margin-top: 0%;}
-    85%{margin-top: 0%;}
-    95%{margin-top: -20%;}
-    100% { margin-top: -400%;}
-}
-
-@keyframes info-background-fade{
+@keyframes info-background-fade{ /* .info_open */
     0% {background-color: #ffffff00;}
-    10% {background-color: #29212138;}
+    80% {background-color: #29212138;}
     100% {background-color: #29212138;}
 }
 
+@keyframes info-background-fade-out{ /* .info_close */
+    100% {background-color: #ffffff00;}
+    15% {background-color: #29212138;}
+    0% {background-color: #29212138;}
+}
 
-@keyframes info-reveal-rise{
+@keyframes info-reveal-fall{ /* .info_container_close */
+    0% { margin-top: 0%;}
+    15% {margin-top: -20%;}
+    100%{margin-top: 700%;}
+}
+
+@keyframes info-reveal-rise{ /* .info_container_open */
     0% { margin-top: 400%;}
-    15%{margin-top: 0%;}
+    70%{margin-top: -30%;}
     100%{margin-top: 0%;}
 }
 
+@keyframes prompt-reveal-rise{ /* #prompt_reveal */
+    0% { margin-top: 500%;}
+    15%{margin-top: -10%;}
+    85%{margin-top: -10%;}
+    95%{margin-top: -20%;}
+    100% { margin-top: -500%;}
+}
 
+@keyframes slow-hide{ /* .current_prompt_hide */
+    0%{opacity: 1};
+    100%{opacity: 0};
+}
 
-@media screen and (orientation:portrait) {   
-    
-    #landscape_warning{
+@keyframes slow-reveal{ /* .current_prompt_reveal */
+    0%{opacity: 0};
+    100%{opacity: 1};
+}
+
+ 
+
+/* ------- MEDIA QUERIES  ------- */  
+
+@media screen and (orientation:landscape) { /* Triggers when phone is in landscape orientation */
+    main{
         display: none;
     }
+
+    #landscape_warning{
+        display: block;
+    }
+
+
+}
+
+@media screen and (orientation:portrait) { /* Triggers when phone is in portrait orientation */
+    
 
     main{
         display: flex;
         z-index: 0;
     }
-}
 
-@media screen and (orientation:landscape) {
     #landscape_warning{
-        display: block;
-    }
-
-    main{
         display: none;
     }
 
 }
 
-@media (prefers-color-scheme: dark){
-    :root{
+
+@media (prefers-color-scheme: dark){ /* Triggers when phone is set to dark mode*/
+    :root{ /* Swaps custom property color values for all rules that use them */
         --orange-red: #db522f;
         --black: rgb(245, 243, 237);
         --white: #121212;
         --black-grey: rgba(245, 243, 237, 0.311);
     }
 
-    @keyframes background-fade{
+    .info_button{ /* Negates color swap on info_button text */
+        color: var(--black);
+    }
+
+    .paper-texture{ /* Changes the paper texture so that its visible */ 
+        background-image: url(../assets/black-paper.jpg);
+        mix-blend-mode: screen;
+        opacity: .5;
+    }
+
+    #info_background button{ /* Negates color swap on info_background text */
+        color: var(--black);
+    }
+
+    #user-input-timer input{ /* Negates color swap on user-input-timer inputs */
+        color: var(--black);
+    }
+
+    #user-input-timer input:focus { /* Negates color swap on user-input-timer inputs when focused */
+        color: var(--black);
+    }
+
+    @keyframes background-fade{ /* Makes the background fade darker */
         0% {background-color: #ffffff00;}
         10% {background-color: #0b0b0bed;}
         90% {background-color: #0b0b0bed;}
         100% {background-color: #ffffff00;}
     }
 
-    @keyframes info-background-fade{
+    @keyframes info-background-fade{ /* Makes the background fade darker */
         0% {background-color: #ffffff00;}
-        10% {background-color: #0b0b0bed;}
-        100% {background-color: #0b0b0bed;}
-    }
-
-    .paper-texture{
-        background-image: url(../assets/black-paper.jpg);
-        mix-blend-mode: screen;
-        opacity: .5;
-    }
-
-    #user-input-timer input{
-        color: var(--black);
-    }
-
-    #user-input-timer input:focus {
-        color: var(--black);
-    }
-
-    .info_button{
-        color: var(--black);
-    }
-
-    #info_background button{
-        color: var(--black);
-        
+        80% {background-color: #000000;}
+        100% {background-color: #000000;}
     }
 }

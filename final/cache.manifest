@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 022
+# version 026
 # Include the version number so that the web app will know a new varient was created.
 # It's like updating a native app, but with javascript.
 
@@ -50,16 +50,11 @@ scripts/main.js
 assets/black-paper.jpg
 assets/dark-rotate.gif
 assets/end.png
-assets/Group 2.png
+assets/favicon.svg
 assets/light-rotate.gif
 assets/pause.png
 assets/play.png
-assets/rewind.png
-assets/stop.png
 assets/test-paper.jpg
-assets/test-paper.png
-assets/test.png
-
 
 # FONTS
 
@@ -78,9 +73,3 @@ fonts/georgia-webfont.woff2
 fonts/gothic-webfont.ttf
 fonts/gothic-webfont.woff
 fonts/gothic-webfont.woff2
-fonts/gothicb-webfont.ttf
-fonts/gothicb-webfont.woff
-fonts/gothicb-webfont.woff2
-fonts/futuraptbook-webfont.ttf
-fonts/futuraptbook-webfont.woff
-fonts/futuraptbook-webfont.woff2
