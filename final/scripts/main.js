@@ -174,7 +174,6 @@ function resetTimer(){
     document.getElementById('countdown').style.color = 'var(--black)';
     document.getElementById('body').style.background = 'var(--white)';
     document.getElementById('pause_button').style.display = 'none';
-    document.getElementById('reset_button').style.display = 'none';
 };
 
 // Triggers the endEarly condition in startTimer() and resets the pause button if the user was paused.
