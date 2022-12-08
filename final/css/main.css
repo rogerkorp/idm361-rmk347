@@ -122,7 +122,7 @@ main{
     margin: 0;
     max-width: 650px;
     position: absolute;
-    top: 47%;
+    top: 45.5%;
     transform: translateY(-50%);
 }
 
@@ -360,9 +360,9 @@ p{
     font-size: .5em;
     height: 120vh;
     justify-content: center;
-    position: absolute;
     width: 100vw;
     z-index: 5;
+    padding-bottom: 5vh;
 }
 
 #info_container b{
@@ -429,6 +429,7 @@ p{
     position: absolute;
     width: 100vw;
     z-index: 5;
+    padding-bottom: 5vw;
 }
 
 #prompt_reveal_large{ /* The large text that says what the prompt is */
