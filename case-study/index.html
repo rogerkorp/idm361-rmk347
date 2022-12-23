@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Timer - Case Study</title>
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!-- Favicon Information -->
+        <!-- <link rel="icon" sizes="any" type="image/svg+xml" href="assets/icons/favicon.svg"> -->
+    </head>
+    <body> 
+        <!-- Put navigation links below.
+        <nav></nav>
+        -->
+        <main>
+
+            <div id="hero-image">
+                <h1>Prompt Timer</h1>
+                <p>Final Project for IDM-361 Interactive App Design</p>
+            </div>
+
+            <section class="main-section" id="overview">
+                <h2>Overview</h2>
+                <p>For my final project, I built a web app using HTML5, CSS3, and JavaScript to help me out with my writing challenges. The app allows you to set the length of a challenge using a numeric input field, and then once you start the countdown you will be given a random writing prompt to base a short story off of. The idea is that you have until the countdown ends to write as much as you can about the prompt you were given. For this project I focused on not only making it fully functional offline, but also focused on the visual identity and microinteractions involved in the project as I hoped to utilize the skills I've learned through my time in the UXID program to create my most ambitious project yet. The result is a well-designed, impressive looking app that is useful for my hobbies.</p>
+            </section>
+
+            <section class="main-section" id="context-and-challengs">
+                <h2>Context & Challenge</h2>
+                    <p>Throughout autumn 2022, I took an interactive app development course where I needed to solo build an iOS-based web app experience using HTML5, CSS3, and JavaScript. The main requirements for this project were that it had to feature a meaningful user input, use local storage, and cache manifest functionalities, and overall be a polished final product. I had until December 10th, 2022, to give the final build, granting me a timeline of about 11 weeks.</p>
+                    <p>Considering the short turn-around needed for this project to be a success, I looked to get through the concept phase quickly. I thought about the ideas I workshopped in my spare time over the past summer and recalled a writing exercise I did where I would try to author a short story within one or two hours. This led to the conception of a prompt timer, an application that would allow me to easily set up fresh writing challenges by serving as both a countdown clock and as a randomizer that provides me with different writing prompts each time, I set it up. In theory, an all-in-one solution like this would make it easier for me to write more often – it would save me the trouble of searching online for decent writing prompts by storing them all into one place and the timer would force me to keep each session short. Thinking it through, the idea felt solid enough to base a simple web app off, and so I decided to stick with the concept.</p>
+                    <p>Going forward, I had two main goals in mind while developing this project:</p>
+                        <ol>
+                            <li>I needed to create something that was useful, usable, and satisfying for me to use for regular writing challenges.</li>
+                            <li>I needed to satisfy and impress the instructor so that I can score an A-grade for the class.</li>
+                        </ol>
+            </section>
+
+            <section class="main-section" id="process-and-insight">
+                <h2>Process & Insight</h2>
+                    <h3>Learning to Develop Web Apps</h3>
+                        <p>I started this project by learning how to set up a simple mobile web app using only HTML & CSS. Having years of web development prior to this class it was not too difficult to get up and running, especially since the first few steps revolved around setting up meta tags and creating media queries. For my first app, I created a responsive image that would change depending on the phone’s orientation.</p>
+                            <figure>
+                                <img srcset="assets/images/week-2-examples/cat-landscape-480.jpg 480w,
+                                            assets/images/week-2-examples/cat-landscape-768.jpg 768w,
+                                            assets/images/week-2-examples/cat-landscape-1024.jpg 1024w,
+                                            assets/images/week-2-examples/cat-landscape-2000.jpg 2000w"
+                                sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                                src="assets/images/week-2-examples/cat-landscape-480.jpg">
+                                <figcaption>Screenshot from my first web app: <i>The Cat Zone</i></figcaption>
+                            </figure>
+                        <a href="https://rkorpics.com/idm361/week-02">I've uploaded the original Cat Zone web app here.</a>
+                        <p>This simple web app would eventually serve as the base HTML document for the final product. One week later, I built out the Cat Zone with support for custom app icons. For this, I used <a href="https://www.appicon.co/">AppIcon</a> to quickly convert my original high-resolution image file into several smaller files that support all iOS icon sizes.</p>
+                            <figure>
+                                <img srcset="assets/images/week-3-examples/cat-portrait-480.jpg 480w,
+                                            assets/images/week-3-examples/cat-portrait-768.jpg 768w,
+                                            assets/images/week-3-examples/cat-portrait-1024.jpg 1024w,
+                                            assets/images/week-3-examples/cat-portrait-2000.jpg 2000w"
+                                sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                                src="assets/images/week-3-examples/cat-portrait-480.jpg"
+                                class="iphone-portrait-image">
+                                <figcaption>Screenshot showcasing <i>The Cat Zone</i> app icon</figcaption>
+                            </figure>
+                        <a href="https://rkorpics.com/idm361/week-03">This version of the app can be found here.</a>
+                    <h3>Wireframing</h3>
+                    <p>Meanwhile, I began designing of the Prompt Timer by creating a set of low-fidelity wireframes using Figma.</p>
+                    <figure>
+                        <img srcset="assets/images/week-3-examples/wireframe-480.jpg 480w,
+                                    assets/images/week-3-examples/wireframe-768.jpg 768w,
+                                    assets/images/week-3-examples/wireframe-1024.jpg 1024w,
+                                    assets/images/week-3-examples/wireframe-2000.jpg 2000w"
+                        sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                        src="assets/images/week-3-examples/wireframe-480.jpg">
+                        <figcaption>Low fidelity wireframes of the initial Prompt Timer design</figcaption>
+                    </figure>
+                    <p>Initially, I wanted to give the user more control over the app than I ended up implementing. The main screen where you would input the time had two separate controls for minutes and seconds, a decision based on the design conventions found through competitor research. Originally, I kept the timer limited to an hour to force the writing sessions to be quick, true to the original intentions of the exercise. I also planned to have a hamburger menu that would allow users to toggle between various app functions and writing prompt filters, but this was scrapped for time. Also important to note is the analog-inspired clock design, which would have allowed users to fast-forward or reverse the time by dragging the arrow hand around. While this would also not come to fruition due to being too complicated to implement, I loved the idea of incorporating skeuomorphic design principles into the project. Writing has always been associated with physical paper and books, so I felt utilizing design elements connected to these concept would help reinforce the idea that the app is built for writing.</p>
+                    <h3>Building Prompt Timer</h3>
+                    <p>After designing the wireframes, I gained a better idea of what features were going to be necessary for me to develop, so I started work the following week. After implementing a cache manifest and an Add-To-Home prompt, I scripted a 30-second countdown function that is initiated on button press.</p>
+                    <figure>
+                        <img srcset="assets/images/week-4-examples/week-4-480.jpg 480w,
+                                    assets/images/week-4-examples/week-4-768.jpg 768w,
+                                    assets/images/week-4-examples/week-4-1024.jpg 1024w,
+                                    assets/images/week-4-examples/week-4-2000.jpg 2000w"
+                        sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                        src="assets/images/week-4-examples/week-4-480.jpg"
+                        class="iphone-portrait-image">
+                        <figcaption>The first proper build of the Prompt Timer</figcaption>
+                    </figure>
+                    <a href="https://rkorpics.com/idm361/week-04">You can view this version of the project here.</a>
+                    <p>In simple terms, what this function does is record the time the user clicks on the button, and then creates a new “deadline” value equal to that time plus thirty seconds. Every millisecond afterwards, the function records how close the current time is to what the deadline time will be and updates the information on the page accordingly. The timer ring is round div with a conic-gradient background applied to it, with the degree values for the red and grey portions of the ring updating based on completion percentage of the countdown.</p>
+                    <p>This build was later expanded upon with custom user inputs, play and pause controls, and some early CSS stylings. By this point in development, I had started experimenting with the style of the application by adding in color and depth to try and figure out a good balance between flat design and full skeuomorphism.</p>
+                    <figure>
+                        <img srcset="assets/images/week-6-examples/week-6-480.jpg 480w,
+                                    assets/images/week-6-examples/week-6-768.jpg 768w,
+                                    assets/images/week-6-examples/week-6-1024.jpg 1024w,
+                                    assets/images/week-6-examples/week-6-2000.jpg 2000w"
+                        sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                        src="assets/images/week-4-examples/week-6-480.jpg"
+                        class="iphone-portrait-image">
+                        <figcaption>The second major build of the Prompt Timer</figcaption>
+                    </figure>
+                    <a href="https://rkorpics.com/idm361/week-06">You can view this version of the project here.</a>
+                    <p>After recieving feedback on this build, I chose to remove screen that the app paused on when the timer ran out in subsequence releases. The main critique was that the screen was an unessarsary step in the process, and that the experience would be much smoother if it simply just cut back to the timer input. I also recieved feedback to keep to a red-and-white color scheme as opposed to branching out into other colors in order make the visual style consistent across the experience. These changes all culminated in the beta build that released a few weeks later.</p>
+                    <p>In addition to visual changes, this was when I finally added in the function that chose a random prompt and displayed it before the timer began.</p>
+                    <figure>
+                        <img srcset="assets/beta-examples/beta-480.jpg 480w,
+                                    assets/images/beta-examples/beta-768.jpg 768w,
+                                    assets/images/beta-examples/beta-1024.jpg 1024w,
+                                    assets/images/beta-examples/beta-2000.jpg 2000w"
+                        sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                        src="assets/images/beta-examples/beta-480.jpg"
+                        class="iphone-portrait-image">
+                        <figcaption>The Prompt Timer beta build</figcaption>
+                    </figure>
+                    <p>From here on out most of the work was done on visual refinement and technical polish. Inspired by various printed mediums, I decided to go with a flatter visual appearance but added in a paper texture overlay and various serif fonts to stick with the analog brand identity. I felt that doing this was a good compromise between a strong visual theme and a modern-looking interface. The minutes and seconds inputs were reduced to just a minute’s input after doing some testing and realizing that the level of precision the seconds box granted was unnecessary and ended up cramping the interface. In most cases, just having a minute’s input was fine enough for the app, and with the increased size I was able to accommodate a third digit in the box which meant that I could comfortably increase the time limit to go beyond one hour. Originally I thought to just bump it up to two or three hours in order to keep the sessions small, but after some consideration I felt that the limitations were a bit unnecessary and in the end just decided to let users set it to a maximum of 999 minutes – more than enough for a one-off writing session and the maximum integer size allowed before it breaks the interface. The prompt reveal was also changed to give credit to the original writer of the phrases paraphrased as examples in the app.</p>
+            </section>
+
+            <section class="main-section" id="solution">
+                <h2>Solution</h2>
+                <figure>
+                    <img srcset="assets/final-examples/final-480.jpg 480w,
+                                assets/images/final-examples/final-768.jpg 768w,
+                                assets/images/final-examples/final-1024.jpg 1024w,
+                                assets/images/final-examples/final-2000.jpg 2000w"
+                    sizes="(min-width: 480px) 768w, 1024w, 2000w"
+                    src="assets/images/final-examples/final-480.jpg"
+                    class="iphone-portrait-image">
+                    <figcaption>The final build</figcaption>
+                </figure>
+                <a href="https://rkorpics.com/idm361/final">This is the final result.</a>
+                <p>The product is a web application that sets a timer based on the number of minutes the user specified. When the timer begins, an animation will play out that first reveals the prompt you chose, and then slides away to begin the countdown clock. The clock can be paused or resumed at any time in the middle of the countdown, or alternatively the user can end the countdown pre-maturely and cancel the challenge. For instructions, the user can open the information panel by pressing the “i” button on the bottom left corner of the interface at any moment. In addition, the app also sports a dark mode appearance based on the users system preference.</p>
+            </section>
+
+            <section class="main-section" id="results">
+                <h2>Results</h2>
+                <p>As of writing this case study, I have no clue what my final grade is. I will update it later with the results.</p>
+            </section>
+        </main>
+   
+        <footer>Created by Roger Korpics. IDM-361. Autumn 2022. </footer>
+        <script src="assets/scripts/script.js"></script>
+    </body>
+</html>

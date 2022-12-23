@@ -1,0 +1,106 @@
+/* ------- Custom Properties ------- */
+
+:root{
+    --black: #000000;
+    --white: #ffffff;
+}
+
+
+
+/* ------- Custom Fonts ------- */
+
+
+/* ------- Element Rules ------- */
+
+img{
+    width: 100%;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    color: #121212;
+}
+
+h2{
+    color: #e64820;
+    font-size: 2.5em;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+figcaption{
+    font-size: .8em;
+    color: #4e4e4e;
+    font-style: italic;
+    margin-top: 1em;
+}
+
+footer{
+    background-color: #121212;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 10em;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* ------- Class Rules ------- */
+
+.iphone-image{
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.151);
+}
+
+.iphone-portrait-image{
+    width: 60%;
+}
+
+.main-section{
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto 0;
+    padding: 0 2em 0;
+}
+
+.main-section p{
+   margin-left: 1em;
+}
+
+
+
+/* ------- ID Rules ------- */
+
+#id{
+    color: white;
+}
+
+#hero-image{
+    background-image: url("../images/hero/hero-2000.jpg");
+    background-size: cover;
+    color: white;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2em;
+    text-shadow: rgb(0, 0, 0) 1em 0 2em;
+    text-align: center;
+}
+
+
+/* ------- Media Queries ------- */
+
+@media screen and (max-width: 800px){
+    
+}
